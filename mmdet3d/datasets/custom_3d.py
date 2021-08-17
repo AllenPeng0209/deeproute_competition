@@ -10,7 +10,6 @@ from ..core.bbox import get_box_type
 from .pipelines import Compose
 from .utils import extract_result_dict, get_loading_pipeline
 
-
 @DATASETS.register_module()
 class Custom3DDataset(Dataset):
     """Customized 3D dataset.
@@ -49,11 +48,13 @@ class Custom3DDataset(Dataset):
                  modality=None,
                  box_type_3d='LiDAR',
                  filter_empty_gt=True,
-                 test_mode=False):
+                 test_mode=False, 
+                 valid_mode=False):
         super().__init__()
         self.data_root = data_root
         self.ann_file = ann_file
         self.test_mode = test_mode
+        self.valid_mode= valid_mode
         self.modality = modality
         self.filter_empty_gt = filter_empty_gt
         self.box_type_3d, self.box_mode_3d = get_box_type(box_type_3d)
