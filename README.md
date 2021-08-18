@@ -26,7 +26,7 @@ to modify training and valid split
 
 ```python
 open mmdet3d/datasets/deeproute_dataset.py, change load_annotations setting
-```python
+```
 
 
 
