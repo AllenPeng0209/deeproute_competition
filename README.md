@@ -1,3 +1,39 @@
+## Deeproute Competition 
+
+This repo provide simple pipeline for deeproute dataset based on mmdetection3d.
+
+for pointpillar training 
+```python
+tools/dist_train.sh configs/benchmark/hv_pointpillars_secfpn_4x8_80e_pcdet_deeproute-9class.py
+```
+
+for centerpoint training 
+
+```python
+tools/dist_train.sh configs/benchmark/hv_centerpoint_secfpn_2x8_80e_pcdet_deeproute-9class.py
+```
+
+
+for submssion file generation
+
+```python
+tools/dist_test.sh configs/benchmark/hv_pointpillars_secfpn_4x8_80e_pcdet_deeproute-9class.py work_dirs/pp_secfpn_80e/latest.pth 8 --format-only
+```
+
+
+
+to modify training and valid split
+
+```python
+open mmdet3d/datasets/deeproute_dataset.py, change load_annotations setting
+```python
+
+
+
+
+
+
+
 <div align="center">
   <img src="resources/mmdet3d-logo.png" width="600"/>
 </div>
